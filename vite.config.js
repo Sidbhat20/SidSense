@@ -2,6 +2,8 @@ import { defineConfig } from "vite";
 import { resolve } from "path";
 
 export default defineConfig({
+  publicDir: "public",
+  base: "/",
   build: {
     rollupOptions: {
       input: {
@@ -20,5 +22,16 @@ export default defineConfig({
       "**/*.gif",
     ],
     copyPublicDir: true,
+    cssCodeSplit: true,
+    minify: 'esbuild',
+  },
+  server: {
+    middleware: true,
+    hmr: {
+      overlay: true,
+    },
+  },
+  optimizeDeps: {
+    include: ['gsap', 'lenis'],
   },
 });

@@ -63,6 +63,8 @@
   border: 0.3em solid var(--fg);
   border-radius: 2em;
   overflow: hidden;
+  will-change: transform;
+  transform: translate3d(0, -110%, 0) scale(0.25) rotate(-15deg);
 }
 
 /* home - featured work */
@@ -79,6 +81,7 @@
   height: 100vh;
   display: flex;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
 }
 
 .featured-work .featured-title-wrapper {
@@ -205,6 +208,7 @@
 .services .service-card-inner {
   position: relative;
   will-change: transform;
+  transform: translate3d(0, 0, 0);
   width: calc(100vw - 4em);
   height: 100%;
   margin: 0 auto;
