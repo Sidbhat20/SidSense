@@ -3,7 +3,7 @@ import { resolve } from "path";
 
 export default defineConfig({
   publicDir: "public",
-  base: "/SidSense/",
+  base: "./",
   build: {
     rollupOptions: {
       input: {
