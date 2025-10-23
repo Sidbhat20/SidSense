@@ -75,6 +75,7 @@
   width: 100vw;
   height: 100svh;
   overflow: hidden;
+  z-index: 0;
 }
 
 .featured-work .featured-titles {
@@ -121,6 +122,8 @@
   height: 200vh;
   transform-style: preserve-3d;
   perspective: 500px;
+  z-index: 1;
+  pointer-events: none;
 }
 
 .featured-work .featured-img-card {
@@ -183,6 +186,8 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  z-index: 1;
+  background-color: var(--bg);
 }
 
 .services-header .services-profile-icon {
@@ -212,6 +217,7 @@
 .services .service-card {
   position: relative;
   min-height: 300px;
+  z-index: 1;
 }
 
 .services .service-card-inner {
@@ -226,6 +232,9 @@
   gap: 4em;
   border-radius: 2em;
   min-height: 500px;
+  background-color: var(--bg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .services .service-card-content {
