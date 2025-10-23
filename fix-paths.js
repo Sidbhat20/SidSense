@@ -33,6 +33,9 @@ function processHTMLFiles() {
     // Fix root path references  
     content = content.replace(/href="\/">/g, 'href="/SidSense/">');
     
+    // Write the updated content back to the file
+    fs.writeFileSync(filePath, content, 'utf8');
+    
     console.log(`✓ Fixed paths in: ${file}`);
   });
 }
