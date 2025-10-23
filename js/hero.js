@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setInterval(() => {
     currentImageIndex =
       currentImageIndex >= totalImages ? 1 : currentImageIndex + 1;
-    heroImg.src = `/images/work-items/work-item-${currentImageIndex}.jpg`;
+    heroImg.src = `/SidSense/images/work-items/work-item-${currentImageIndex}.jpg`;
   }, 250);
 
   const initAnimations = () => {

@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const imageParticleCount = 10;
   const imagePaths = Array.from(
     { length: imageParticleCount },
-    (_, i) => `/images/work-items/work-item-${i + 1}.jpg`
+    (_, i) => `/SidSense/images/work-items/work-item-${i + 1}.jpg`
   );
 
   imagePaths.forEach((path) => {

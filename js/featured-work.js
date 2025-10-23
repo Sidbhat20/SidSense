@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
       featuredImgCard.className = `featured-img-card featured-img-card-${i}`;
 
       const img = document.createElement("img");
-      img.src = `/images/work-items/work-item-${i}.jpg`;
+      img.src = `/SidSense/images/work-items/work-item-${i}.jpg`;
       img.alt = `featured work image ${i}`;
       featuredImgCard.appendChild(img);
 
