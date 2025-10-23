@@ -11,25 +11,13 @@ function processHTMLFiles() {
     const filePath = path.join(distDir, file);
     let content = fs.readFileSync(filePath, 'utf8');
     
-    // Replace ALL variations of image paths
+    // Replace image paths ONLY (not assets - Vite handles those)
     content = content.replace(/src="\/images\//g, 'src="/SidSense/images/');
     content = content.replace(/href="\/images\//g, 'href="/SidSense/images/');
     content = content.replace(/src="\.\/images\//g, 'src="/SidSense/images/');
     content = content.replace(/href="\.\/images\//g, 'href="/SidSense/images/');
     content = content.replace(/src="images\//g, 'src="/SidSense/images/');
     content = content.replace(/href="images\//g, 'href="/SidSense/images/');
-    
-    // Fix asset paths
-    content = content.replace(/src="\/assets\//g, 'src="/SidSense/assets/');
-    content = content.replace(/href="\/assets\//g, 'href="/SidSense/assets/');
-    content = content.replace(/src="\.\/assets\//g, 'src="/SidSense/assets/');
-    content = content.replace(/href="\.\/assets\//g, 'href="/SidSense/assets/');
-    
-    // Fix font paths
-    content = content.replace(/src="\/fonts\//g, 'src="/SidSense/fonts/');
-    content = content.replace(/href="\/fonts\//g, 'href="/SidSense/fonts/');
-    content = content.replace(/src="\.\/fonts\//g, 'src="/SidSense/fonts/');
-    content = content.replace(/href="\.\/fonts\//g, 'href="/SidSense/fonts/');
     
     // Fix page navigation links - all variations
     content = content.replace(/href="\/work\.html"/g, 'href="/SidSense/work.html"');
@@ -45,9 +33,6 @@ function processHTMLFiles() {
     content = content.replace(/href="\.\/index\.html"/g, 'href="/SidSense/"');
     content = content.replace(/href="\.\/project"/g, 'href="/SidSense/project.html"');
     content = content.replace(/href="\/project"/g, 'href="/SidSense/project.html"');
-    
-    // Fix root path references  
-    content = content.replace(/href="\/">/g, 'href="/SidSense/">');
     
     // Write the updated content back to the file
     fs.writeFileSync(filePath, content, 'utf8');
