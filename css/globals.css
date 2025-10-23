@@ -90,6 +90,11 @@ p.mn {
   line-height: 1.125;
 }
 
+/* ScrollTrigger pin-spacer z-index fix */
+.pin-spacer {
+  z-index: 0 !important;
+}
+
 /* contact cta */
 .contact-cta {
   position: relative;
