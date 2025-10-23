@@ -11,12 +11,30 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentImageIndex = 1;
   const totalImages = 10;
   let scrollTriggerInstance = null;
+  let animationFrame = null;
+  
+  // Preload images for smoother transitions
+  const preloadedImages = [];
+  for (let i = 1; i <= totalImages; i++) {
+    const img = new Image();
+    img.src = `/SidSense/images/work-items/work-item-${i}.jpg`;
+    preloadedImages.push(img);
+  }
 
-  setInterval(() => {
-    currentImageIndex =
-      currentImageIndex >= totalImages ? 1 : currentImageIndex + 1;
-    heroImg.src = `/SidSense/images/work-items/work-item-${currentImageIndex}.jpg`;
-  }, 250);
+  // Use requestAnimationFrame for smoother updates (reduced frequency)
+  let lastUpdate = 0;
+  const updateInterval = 400; // Reduced frequency for better performance
+  
+  const updateImage = (timestamp) => {
+    if (timestamp - lastUpdate >= updateInterval) {
+      currentImageIndex = currentImageIndex >= totalImages ? 1 : currentImageIndex + 1;
+      heroImg.src = preloadedImages[currentImageIndex - 1].src;
+      lastUpdate = timestamp;
+    }
+    animationFrame = requestAnimationFrame(updateImage);
+  };
+  
+  animationFrame = requestAnimationFrame(updateImage);
 
   const initAnimations = () => {
     if (scrollTriggerInstance) {
@@ -27,12 +45,14 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".hero-img-holder",
       start: "top bottom",
       end: "top top",
+      scrub: 0.5, // Add scrub for smoother scroll animations
       onUpdate: (self) => {
         const progress = self.progress;
         gsap.set(".hero-img", {
           y: `${-110 + 110 * progress}%`,
           scale: 0.25 + 0.75 * progress,
           rotation: -15 + 15 * progress,
+          force3D: true, // Hardware acceleration
         });
       },
     });
@@ -40,7 +60,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initAnimations();
 
+  // Debounce resize events
+  let resizeTimer;
   window.addEventListener("resize", () => {
-    initAnimations();
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(initAnimations, 150);
+  });
+  
+  // Cleanup on page unload
+  window.addEventListener("beforeunload", () => {
+    if (animationFrame) cancelAnimationFrame(animationFrame);
   });
 });

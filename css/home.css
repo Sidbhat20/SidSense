@@ -65,6 +65,10 @@
   overflow: hidden;
   will-change: transform;
   transform: translate3d(0, -110%, 0) scale(0.25) rotate(-15deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  /* Performance optimizations */
+  contain: layout style paint;
 }
 
 /* home - featured work */
@@ -73,6 +77,8 @@
   width: 100vw;
   height: 100svh;
   overflow: hidden;
+  /* Performance optimization */
+  contain: layout style;
 }
 
 .featured-work .featured-titles {
@@ -82,6 +88,8 @@
   display: flex;
   will-change: transform;
   transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .featured-work .featured-title-wrapper {
@@ -125,6 +133,12 @@
   height: 300px;
   border-radius: 2em;
   overflow: hidden;
+  /* Performance optimizations */
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  contain: layout style paint;
+  transform: translateZ(0);
 }
 
 .featured-work .featured-work-indicator {

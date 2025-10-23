@@ -76,6 +76,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const imagesContainer = document.querySelector(".featured-images");
 
     imagesContainer.innerHTML = "";
+    
+    // Preload images for better performance
+    const imagePromises = [];
+    for (let i = 1; i <= 10; i++) {
+      const img = new Image();
+      img.src = `/SidSense/images/work-items/work-item-${i}.jpg`;
+      imagePromises.push(new Promise(resolve => {
+        img.onload = resolve;
+        img.onerror = resolve; // Continue even if image fails
+      }));
+    }
 
     for (let i = 1; i <= 10; i++) {
       const featuredImgCard = document.createElement("div");
@@ -84,6 +95,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const img = document.createElement("img");
       img.src = `/SidSense/images/work-items/work-item-${i}.jpg`;
       img.alt = `featured work image ${i}`;
+      img.loading = "lazy"; // Add lazy loading
+      img.decoding = "async"; // Add async decoding
       featuredImgCard.appendChild(img);
 
       const position = featuredCardPos[i - 1];
@@ -91,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       gsap.set(featuredImgCard, {
         x: position.x,
         y: position.y,
+        force3D: true, // Hardware acceleration
       });
 
       imagesContainer.appendChild(featuredImgCard);
@@ -101,6 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
       gsap.set(featuredImgCard, {
         z: -1500,
         scale: 0,
+        force3D: true, // Hardware acceleration
       });
     });
 
@@ -114,6 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const xPosition = -moveDistance * self.progress;
         gsap.set(featuredTitles, {
           x: xPosition,
+          force3D: true,
         });
 
         featuredImgCards.forEach((featuredImgCard, index) => {
@@ -127,6 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
           gsap.set(featuredImgCard, {
             z: newZ,
             scale: scale,
+            force3D: true,
           });
         });
 
@@ -149,7 +166,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initAnimations();
 
+  // Debounce resize for better performance
+  let resizeTimer;
   window.addEventListener("resize", () => {
-    initAnimations();
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(initAnimations, 150);
   });
 });
