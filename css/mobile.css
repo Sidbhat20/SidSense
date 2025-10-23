@@ -1,5 +1,14 @@
 /* Mobile Responsive Styles */
 
+/* Prevent horizontal scrollbar on all devices */
+* {
+  max-width: 100%;
+}
+
+section {
+  overflow-x: hidden;
+}
+
 /* Tablets and smaller screens */
 @media (max-width: 1024px) {
   h1 {
