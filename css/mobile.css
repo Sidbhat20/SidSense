@@ -1,0 +1,347 @@
+/* Mobile Responsive Styles */
+
+/* Tablets and smaller screens */
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p,
+  p.ss {
+    font-size: 1.125rem;
+  }
+
+  p.mn {
+    font-size: 0.75rem;
+  }
+
+  /* Hero adjustments */
+  .hero-content {
+    padding: 1.5em;
+  }
+
+  /* Work items grid */
+  .work-items .row {
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .work-item {
+    width: 100% !important;
+  }
+
+  /* Services cards */
+  .services-cards {
+    grid-template-columns: 1fr !important;
+    gap: 1em;
+  }
+
+  /* About stats */
+  .stats-row {
+    flex-direction: column;
+  }
+
+  .stats-col {
+    width: 100% !important;
+    margin-bottom: 2em;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
+
+  p,
+  p.ss {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  p.mn {
+    font-size: 0.7rem;
+  }
+
+  /* Navigation */
+  nav {
+    padding: 1em;
+  }
+
+  .logo p {
+    font-size: 0.875rem;
+  }
+
+  /* Hero section */
+  .hero {
+    min-height: 80vh;
+    padding: 1em;
+  }
+
+  .hero-img {
+    height: 40vh;
+    margin: 1em 0;
+  }
+
+  .hero-title h1 {
+    font-size: 2.5rem;
+  }
+
+  /* Featured work */
+  .featured-titles {
+    padding: 0.5em;
+  }
+
+  .featured-title h1 {
+    font-size: 2rem;
+  }
+
+  /* Services section */
+  .services-header {
+    padding: 2em 1em;
+  }
+
+  .services-header-content h1 {
+    font-size: 2rem;
+  }
+
+  .service-card {
+    min-height: 300px;
+  }
+
+  .service-card-copy h2 {
+    font-size: 1.75rem;
+  }
+
+  /* Work header */
+  .work-header {
+    padding: 2em 1em;
+  }
+
+  .work-header-title h1 {
+    font-size: 2rem;
+  }
+
+  .work-profile-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Work items */
+  .work-item {
+    margin-bottom: 1em;
+  }
+
+  .work-item-copy h2 {
+    font-size: 1.5rem;
+  }
+
+  /* About page */
+  .about-hero {
+    flex-direction: column;
+    padding: 2em 1em;
+  }
+
+  .about-hero-title,
+  .about-hero-bio,
+  .about-hero-portrait {
+    width: 100% !important;
+  }
+
+  .about-hero-portrait {
+    max-width: 300px;
+    margin: 2em auto;
+  }
+
+  .about-copy {
+    padding: 2em 1em;
+  }
+
+  .about-copy h3 {
+    font-size: 1.125rem;
+    margin-bottom: 1.5em;
+  }
+
+  .skills {
+    padding: 2em 1em;
+  }
+
+  /* Contact page */
+  .contact {
+    padding: 2em 1em;
+  }
+
+  .contact-card {
+    padding: 2em 1em;
+    margin-bottom: 1em;
+  }
+
+  .contact-card h1 {
+    font-size: 2rem;
+  }
+
+  /* Project page */
+  .project-preview {
+    flex-direction: column;
+  }
+
+  .project-preview-col {
+    width: 100% !important;
+  }
+
+  .project-hero {
+    padding: 2em 1em;
+  }
+
+  /* Footer */
+  footer {
+    padding: 2em 1em;
+  }
+
+  .footer-row {
+    flex-wrap: wrap;
+  }
+
+  .footer-col {
+    min-width: 50%;
+    margin-bottom: 2em;
+  }
+
+  /* Contact CTA button */
+  .contact-cta {
+    padding: 1em;
+  }
+
+  .contact-button {
+    width: 90% !important;
+    height: 200px !important;
+  }
+
+  .contact-button h2 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Hide decorative elements on mobile */
+  .tag {
+    display: none;
+  }
+
+  /* Adjust animations */
+  .trail-container {
+    padding: 1em;
+  }
+}
+
+/* Small mobile phones */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p,
+  p.ss {
+    font-size: 0.875rem;
+  }
+
+  p.mn {
+    font-size: 0.65rem;
+  }
+
+  .hero-title h1 {
+    font-size: 1.75rem;
+  }
+
+  .featured-title h1 {
+    font-size: 1.5rem;
+  }
+
+  .service-card-copy h2 {
+    font-size: 1.25rem;
+  }
+
+  .work-header-title h1 {
+    font-size: 1.5rem;
+  }
+
+  .contact-card h1 {
+    font-size: 1.5rem;
+  }
+
+  .footer-col {
+    min-width: 100%;
+  }
+
+  /* Smaller padding for compact view */
+  .hero,
+  .services,
+  .work-header,
+  .about-hero,
+  .about-copy,
+  .contact,
+  footer {
+    padding: 1.5em 0.75em;
+  }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 900px) and (orientation: landscape) {
+  .hero {
+    min-height: auto;
+  }
+
+  .hero-img {
+    height: 50vh;
+  }
+
+  .work-header {
+    min-height: auto;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  /* Larger tap targets for mobile */
+  a,
+  button,
+  .menu-toggle-btn {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 0.5em;
+  }
+
+  /* Disable hover effects on touch devices */
+  .work-item:hover,
+  .service-card:hover,
+  .nav-item:hover {
+    transform: none;
+  }
+
+  /* Better scrolling performance on mobile */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
