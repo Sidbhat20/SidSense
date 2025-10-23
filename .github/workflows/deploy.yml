@@ -43,6 +43,15 @@ jobs:
       - name: Build
         run: npm run build
       
+      - name: Verify paths were fixed
+        run: |
+          echo "Checking if paths were fixed in dist/index.html:"
+          grep -o "/SidSense/images/hero/img1.jpg" dist/index.html || echo "Path not found!"
+          echo "Checking hero folder:"
+          ls -la dist/images/hero/ | head -5
+          echo "Checking work-items folder:"
+          ls -la dist/images/work-items/ | head -5
+      
       - name: Add .nojekyll file
         run: touch dist/.nojekyll
       
