@@ -67,8 +67,6 @@
   transform: translate3d(0, -110%, 0) scale(0.25) rotate(-15deg);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  /* Performance optimizations */
-  contain: layout style paint;
 }
 
 /* home - featured work */
@@ -77,8 +75,6 @@
   width: 100vw;
   height: 100svh;
   overflow: hidden;
-  /* Performance optimization */
-  contain: layout style;
 }
 
 .featured-work .featured-titles {
@@ -137,7 +133,6 @@
   will-change: transform;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  contain: layout style paint;
   transform: translateZ(0);
 }
 
