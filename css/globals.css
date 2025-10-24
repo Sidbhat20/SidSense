@@ -22,8 +22,6 @@
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
@@ -33,19 +31,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
   max-width: 100vw;
-  /* Performance optimizations */
-  transform: translateZ(0);
-  backface-visibility: hidden;
 }
 
 img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  will-change: transform;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
 }
 
 h1,
@@ -88,11 +79,6 @@ p.mn {
   font-size: 0.875rem;
   font-weight: 500;
   line-height: 1.125;
-}
-
-/* ScrollTrigger pin-spacer - ensure proper stacking */
-.pin-spacer {
-  position: relative !important;
 }
 
 /* contact cta */
