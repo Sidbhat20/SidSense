@@ -75,7 +75,8 @@
   width: 100vw;
   height: 100svh;
   overflow: hidden;
-  z-index: 0;
+  z-index: 2;
+  background-color: var(--bg);
 }
 
 .featured-work .featured-titles {
@@ -87,6 +88,7 @@
   transform: translate3d(0, 0, 0);
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
+  z-index: 2;
 }
 
 .featured-work .featured-title-wrapper {
@@ -95,6 +97,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 
 .featured-title-img {
@@ -111,6 +114,8 @@
 .featured-work .featured-title-wrapper h1 {
   text-align: center;
   transform: translateY(-0.5em);
+  z-index: 2;
+  color: var(--fg);
 }
 
 .featured-work .featured-images {
@@ -173,7 +178,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 2;
+  z-index: 10;
+  color: var(--fg);
 }
 
 /* home - services header */

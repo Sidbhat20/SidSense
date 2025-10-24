@@ -90,9 +90,9 @@ p.mn {
   line-height: 1.125;
 }
 
-/* ScrollTrigger pin-spacer z-index fix */
+/* ScrollTrigger pin-spacer - ensure proper stacking */
 .pin-spacer {
-  z-index: 0 !important;
+  position: relative !important;
 }
 
 /* contact cta */
