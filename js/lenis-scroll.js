@@ -15,14 +15,14 @@ document.addEventListener("DOMContentLoaded", () => {
         smoothTouch: true,
         touchMultiplier: 1.5,
         infinite: false,
-        lerp: 0.08, // Slightly increased for smoother mobile
+        lerp: 0.05,
         wheelMultiplier: 1,
         orientation: "vertical",
         smoothWheel: true,
         syncTouch: true,
       }
     : {
-        duration: 1,  // Reduced from 1.2 for snappier feel
+        duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
         direction: "vertical",
         gestureDirection: "vertical",
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         smoothTouch: false,
         touchMultiplier: 2,
         infinite: false,
-        lerp: 0.12, // Increased from 0.1 for smoother animations
+        lerp: 0.1,
         wheelMultiplier: 1,
         orientation: "vertical",
         smoothWheel: true,
@@ -64,14 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
             smoothTouch: true,
             touchMultiplier: 1.5,
             infinite: false,
-            lerp: 0.08,
+            lerp: 0.05,
             wheelMultiplier: 1,
             orientation: "vertical",
             smoothWheel: true,
             syncTouch: true,
           }
         : {
-            duration: 1,
+            duration: 1.2,
             easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
             direction: "vertical",
             gestureDirection: "vertical",
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             smoothTouch: false,
             touchMultiplier: 2,
             infinite: false,
-            lerp: 0.12,
+            lerp: 0.1,
             wheelMultiplier: 1,
             orientation: "vertical",
             smoothWheel: true,
@@ -91,10 +91,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Debounce resize events
-  let resizeTimer;
-  window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(handleResize, 150);
-  });
+  window.addEventListener("resize", handleResize);
 });

@@ -66,10 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   initAnimations();
 
-  // Debounce resize for better performance
-  let resizeTimer;
   window.addEventListener("resize", () => {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(initAnimations, 150);
+    initAnimations();
   });
 });
