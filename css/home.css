@@ -117,8 +117,6 @@
   height: 200vh;
   transform-style: preserve-3d;
   perspective: 500px;
-  z-index: 1;
-  pointer-events: none;
 }
 
 .featured-work .featured-img-card {
